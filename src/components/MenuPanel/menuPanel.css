@@ -1,0 +1,31 @@
+.menu-panel-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-grow: 2;
+    gap: 25px;
+    padding: 0 15vw 50px;
+}
+
+.menu-panel-item-card{
+    display: flex;
+    flex-direction: column;
+    height: 35vh;
+    width: 35vh;
+    align-items: center;
+    justify-content: space-evenly;
+    padding-top: 10%;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.menu-item-text{
+    font-size: 25px;
+}
+
+@media only screen and (max-width: 1060px) {
+    .menu-panel-container {
+        padding: 0 0 50px;
+    }
+}

@@ -1,23 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
+import 'primereact/resources/themes/arya-green/theme.css'
+import 'primeflex/primeflex.css';
+import './fonts/VarsityTeam/VarsityTeam.woff'
+import Main from "./containers/main/Main";
+import {BrowserRouter} from "react-router-dom";
+import {CloudinaryContext} from "cloudinary-react";
+import {UserProvider} from "./contexts/UserContext";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <UserProvider>
+            <CloudinaryContext cloudName={"remote-german"} secure={true}>
+                <BrowserRouter>
+                    <Main/>
+                </BrowserRouter>
+            </CloudinaryContext>
+        </UserProvider>
     </div>
   );
 }

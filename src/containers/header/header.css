@@ -1,0 +1,22 @@
+.p-toolbar-group-left{
+    display:flex;
+    padding-left: 20px;
+    justify-content: flex-start;
+}
+
+.p-toolbar-group-right{
+    display:flex;
+    flex-grow: 1;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-right: 10px;
+}
+
+.p-toolbar {
+    display:flex;
+    flex-direction: row;
+    padding: 5px;
+}
+
+.header-container{
+}
