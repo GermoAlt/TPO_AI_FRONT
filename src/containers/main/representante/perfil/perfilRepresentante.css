@@ -1,0 +1,16 @@
+.perfil-representante-container{
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: auto;
+    min-width: 60vw;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 10%;
+}
+
+.perfil-representante-panel-superior{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}

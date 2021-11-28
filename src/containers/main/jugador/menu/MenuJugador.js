@@ -1,7 +1,8 @@
 import React from "react";
-import MenuPanel from "../../../components/MenuPanel/MenuPanel";
+import "./menuJugador.css"
+import MenuPanel from "../../../../components/MenuPanel/MenuPanel";
 
-export default function Jugador(){
+export default function MenuJugador(){
 
     const menuItems = [
         {
