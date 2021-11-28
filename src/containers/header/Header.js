@@ -5,6 +5,7 @@ import {Button} from "primereact/button";
 import {Image, Transformation} from "cloudinary-react";
 import useUser from "../../contexts/hooks/useUser";
 import {useNavigate} from "react-router-dom";
+import CookieUtils from "../../utils/CookieUtils";
 
 export default function Header(){
     const {user, changeUser} = useUser()
@@ -12,11 +13,13 @@ export default function Header(){
 
     function handleUser(){
         if(user.tipoUsuario){
-            return (
-                <Image publicId={"TorneosFutbol/clubes/avispa_fukuoka"}>
-                    <Transformation height={50} weight={50} crop={"scale"} />
-                </Image>
-            )
+            if(user.tipoUsuario !== "ADMINISTRADOR") {
+                return (
+                    <Image publicId={"TorneosFutbol/clubes/avispa_fukuoka"}>
+                        <Transformation height={50} weight={50} crop={"scale"}/>
+                    </Image>
+                )
+            }
         } else {
             return (
                 navigate("/")
@@ -25,6 +28,8 @@ export default function Header(){
     }
 
     function logout(){
+        CookieUtils.deleteCookie("tipoUsuario")
+        CookieUtils.deleteCookie("username")
         changeUser(
             {
                 tipoUsuario: ""
@@ -40,11 +45,11 @@ export default function Header(){
     )
     const rightContents = (
         <React.Fragment>
-            <Button label={"Logout"} icon={"pi pi-fw pi-exit"} onClick={() => logout()}/>
+            <Button label="Cerrar sesión" onClick={() => logout()}/>
         </React.Fragment>
     )
 
-    if(user.tipoUsuario) {
+    if(CookieUtils.getCookie("tipoUsuario")) {
         return (
             <div className={"header-container"}>
                 <Toolbar left={leftContents} right={rightContents}/>

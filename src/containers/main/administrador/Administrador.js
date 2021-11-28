@@ -1,39 +1,22 @@
 import React from "react";
-import MenuPanel from "../../../components/MenuPanel/MenuPanel";
+import {Route, Routes} from "react-router-dom";
+import MenuAdministrador from "./menu/MenuAdministrador";
+import PanelPartidoNuevo from "./crearPartido/PanelPartidoNuevo";
+import PanelResultadoNuevo from "./cargarResultados/PanelResultadoNuevo";
+import PanelTablaPosiciones from "./crearTablaPosiciones/PanelTablaPosiciones";
+import PanelEstadisticasJugadores from "./crearEstadisticasJugadores/PanelEstadisticasJugadores";
+import PanelCampeonatoNuevo from "./crearCampeonato/PanelCampeonatoNuevo";
 
 export default function Administrador(){
-
-    const menuItems = [
-        {
-            "title": "Crear campeonato",
-            "image": "TorneosFutbol/iconos/tournament",
-            "url": "/administrador/perfil"
-        },
-        {
-            "title": "Crear partido",
-            "image": "TorneosFutbol/iconos/football-match",
-            "url": "/administrador/perfil"
-        },
-        {
-            "title": "Cargar resultados",
-            "image": "TorneosFutbol/iconos/player-info",
-            "url": "/administrador/perfil"
-        },
-        {
-            "title": "Tablas de posiciones",
-            "image": "TorneosFutbol/iconos/ranking",
-            "url": "/administrador/perfil"
-        },
-        {
-            "title": "Estadística de jugadores",
-            "image": "TorneosFutbol/iconos/player-stats",
-            "url": "/administrador/perfil"
-        }
-    ]
-
+    const BASE_PATH = "/administrador"
     return(
-        <div>
-            <MenuPanel data={menuItems} />
-        </div>
+        <Routes>
+            <Route exact path={BASE_PATH + "/crearCampeonato"} element={<PanelCampeonatoNuevo/>}/>
+            <Route exact path={BASE_PATH + "/crearPartido"} element={<PanelPartidoNuevo/>}/>
+            <Route exact path={BASE_PATH + "/cargarResultado"} element={<PanelResultadoNuevo/>}/>
+            <Route exact path={BASE_PATH + "/tablasPosiciones"} element={<PanelTablaPosiciones/>}/>
+            <Route exact path={BASE_PATH + "/estadisticasJugadores"} element={<PanelEstadisticasJugadores/>}/>
+            <Route path={"*"} element={<MenuAdministrador/>}/>
+        </Routes>
     )
 }

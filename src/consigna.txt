@@ -1,0 +1,37 @@
+Sistema de Gestión de Campeonatos de Futbol
+
+	El equipo de analistas ha finalizado el relevamiento de un sistema que gestiona campeonatos de futbol amateur organizados por una red de clubes.
+	Nos solicitan que en base a ese relevamiento desarrollemos un aplicación web que permita a los organizadores la carga de datos para la gestión del campeonato y a los usuarios en general a consultar los datos y resultados de estos.
+	La aplicación debe distinguir entre tres perfiles de usuario, los representantes de los clubes de la red, los jugadores de cada uno de esos clubes y a los administradores.
+	Cada uno de estos roles poseen distintos accesos que debemos gestionar. Dentro de las funciones de cada rol encontramos:
+
+MenuRepresentante de Club.
+⮚	Gestionar los datos del perfil.
+⮚	Gestionar los datos del club.
+⮚	Gestionar los datos de sus jugadores (ABM).
+⮚	Habilitar o deshabilitar a los jugadores que participan en un campeonato en función de sanciones, enfermedades, etc.
+⮚	Definir la lista de jugadores que participarán en un partido determinado.
+⮚	Controlar y aceptar los resultados cargados en el sistema después de cada partido.
+
+Jugadores.
+⮚	Gestionar sus datos personales, como dirección, mail o teléfono.
+⮚	Consultar el avance de su equipo y su perfil en los campeonatos en los que participa.
+
+MenuAdministrador.
+⮚	Creación de campeonatos.
+⮚	Creación de los partidos.
+⮚	Carga de los resultados de los partidos jugados (goles, faltas, incidentes).
+⮚	Confección de las tablas de posiciones de cada campeonato o de cada club.
+⮚	Confección de estadísticas de jugadores de cada campeonato o cada club.
+
+Proceso:
+⮚	Los clubes afiliados registran a sus jugadores según asignándoles una categoría que está definida por el año de nacimiento (por ejemplo si un jugador nació en 2002 es categoría 02).
+⮚	Los jugadores no pueden participar en partidos de una categoría menor a la que posee, aunque si una mayor (un jugador de 15 años puede jugar con jugadores de 20 años pero no con jugadores de 12 años).
+⮚	Los clubes pueden inscribir a sus jugadores en uno o mas torneos pero los partidos deben ser en distintos días. A cada partido se inscriben 17 jugadores aunque no es necesario que en cada partido jueguen los mismos 17 jugadores.
+⮚	No se puede incluir un jugador en un torneo que fue registrado con una fecha posterior al inicio de este.
+⮚	Los torneos se juegan en las canchas que cada club posee y además de la infraestructura edilicia y sanitaria, aportan a los jueces y árbitro necesario para el desarrollo del partido.
+⮚	El administrador genera los torneos y define el mecanismo por el cual e torneo finaliza (puede ser por puntos o por enfrentamientos entre zonas) en todos los casos el desarrollo del torneo es con partidos dobles (se enfrentan dos veces una en cada una de la sede de los clubes). Los torneos con finales también son dobles.
+⮚	A fin de hacer los cálculos, un club que gana un partido recibe 3 puntos, cuando empata 1 y cuando pierde ninguno. Las faltas (amarillas y/o rojas) afectan al jugador de manera individual inhabilitándolo en algunos casos para poder participar en los siguientes partidos, pero siempre que sea en el mismo torneo (un jugador inhabilitado en un torneo puede jugar en partidos de otro torneo).
+⮚	Al finalizar cada partido el juez completa una planilla que es entregada a uno de los administradores que carga la información en el sistema, la información de planilla cargada queda en espera de la validación, por parte de los representantes de cada uno de los clubes participantes, del contenido cargado al sistema.
+⮚	Una vez validada la información, los datos son incluidos en el sistema y procesados para generar los resultados.
+⮚	En la medida que avanza el torneo el administrador deberá generar los partidos para determinar al ganador del torneo (por ejemplo el ganador de una zona se enfrenta con el ganador de otra).

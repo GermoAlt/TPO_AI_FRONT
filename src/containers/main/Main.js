@@ -2,11 +2,11 @@ import React from "react";
 import './main.css'
 import {Route, Routes} from "react-router-dom";
 import Login from "./login/Login";
-import Administrador from "./administrador/Administrador";
 import Jugador from "./jugador/Jugador";
-import Representante from "./representante/Representante";
 import Header from "../header/Header";
 import Footer from "../footer/Footer";
+import Administrador from "./administrador/Administrador";
+import Representante from "./representante/Representante";
 
 
 export default function Main(){

@@ -5,6 +5,7 @@ import {Button} from "primereact/button";
 import UsuarioService from "../../../services/UsuarioService";
 import useUser from "../../../contexts/hooks/useUser";
 import {useNavigate} from "react-router-dom";
+import {Password} from "primereact/password";
 
 export default function Login(){
     const {user, changeUser} = useUser()
@@ -21,27 +22,20 @@ export default function Login(){
         usuarioService.login(username, password)
             .then(res => {
                 changeUser(res)
-                console.log(res)
             })
     }
 
     if(user.tipoUsuario) navigate("/"+user.tipoUsuario.toLowerCase())
     return(
-        <div className={"login-panel-container p-card"}>
+        <div className={"login-panel-container p-card card"}>
             <div>
-                <p className={"title"}>Ingresar</p>
+                <p className={"title login_title"}>Ingresar</p>
             </div>
-            <div>
-                <span className="p-float-label">
-                    <label htmlFor="username">Usuario</label>
-                    <InputText id="username" value={username} onChange={(e) => setUsername(e.target.value)} />
-                </span>
-            </div>
-            <div>
-                <span className="p-float-label">
-                    <label htmlFor="password">Contraseña</label>
-                    <InputText id="password" value={password} onChange={(e) => setPassword(e.target.value)}/>
-                </span>
+            <div className={"login-panel-input-container"}>
+                <label htmlFor="username">Usuario</label>
+                <InputText id="username" value={username} onChange={(e) => setUsername(e.target.value)} />
+                <label htmlFor="password">Contraseña</label>
+                <Password  id="password" value={password} onChange={(e) => setPassword(e.target.value)} toggleMask />
             </div>
             <div>
                 <Button label={"Login"} onClick={() => login()}/>
