@@ -1,0 +1,9 @@
+.panel-tabla-posiciones-jugador-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.panel-tabla-posiciones-jugador-panel{
+    flex: 1
+}

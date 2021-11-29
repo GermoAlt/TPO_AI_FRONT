@@ -6,4 +6,8 @@ export default class JugadorService {
     getAPI(){
         return API.getInstance()
     }
+
+    getJugadorById(id){
+        this.getAPI().get("/jugador/get/"+id)
+    }
 }

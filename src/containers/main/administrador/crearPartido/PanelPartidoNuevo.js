@@ -21,23 +21,28 @@ export default function PanelPartidoNuevo(){
     return(
         <div className={"panel-partido-nuevo-container"}>
             <div className={"p-fluid p-grid p-formgrid"}>
-                <div>
-                    <label htmlFor="campeonato">Campeonato</label>
-                    <Dropdown id={"campeonato"} value={campeonato} options={campeonatos} onChange={setCampeonato} optionLabel="name" placeholder="Selecciona un campeonato" />
+                <div className={"panel-partido-nuevo-row"}>
+                    <div className={"panel-partido-nuevo-row-field"}>
+                        <label htmlFor="campeonato">Campeonato</label>
+                        <Dropdown id={"campeonato"} value={campeonato} options={campeonatos} onChange={setCampeonato} optionLabel="name" placeholder="Selecciona un campeonato" />
+                    </div>
+                    <div className={"panel-partido-nuevo-row-field"}>
+                        <label htmlFor="icon">Fecha</label>
+                        <Calendar id="icon" value={fecha} onChange={(e) => setFecha(e.value)} showIcon />
+                    </div>
                 </div>
-                <div className="p-d-flex">
-                    <div className="p-mr-2">
+                <div className="panel-partido-nuevo-row">
+                    <div className="panel-partido-nuevo-row-field">
                         <label htmlFor="local">Local</label>
-                        <Dropdown id={"local"} value={local} options={clubes} onChange={setLocal} optionLabel="name" placeholder="Selecciona un club" />
+                        <Dropdown disabled={!campeonato} id={"local"} value={local} options={clubes} onChange={setLocal} optionLabel="name" placeholder="Selecciona un club" />
                     </div>
-                    <div className="p-mr-2">
+                    <div className="panel-partido-nuevo-row-field">
                         <label htmlFor="icon">Visitante</label>
-                        <Dropdown value={visitante} options={clubes} onChange={setVisitante} optionLabel="name" placeholder="Selecciona un club" />
+                        <Dropdown disabled={!campeonato} value={visitante} options={clubes} onChange={setVisitante} optionLabel="name" placeholder="Selecciona un club" />
                     </div>
                 </div>
                 <div>
-                    <label htmlFor="icon">Fecha</label>
-                    <Calendar id="icon" value={fecha} onChange={(e) => setFecha(e.value)} showIcon />
+
                 </div>
             </div>
             <div className={"alta-campeonato-boton-submit-container"}>
