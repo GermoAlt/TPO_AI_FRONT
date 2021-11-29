@@ -1,0 +1,43 @@
+.display-panel-container{
+    display: flex;
+    flex-direction: row;
+}
+
+.content-panel-container{
+    display: flex;
+    flex-direction: column;
+    min-height: 50vh;
+    min-width: 50vw;
+    padding: 25px;
+    justify-content: flex-start;
+    align-content: stretch;
+}
+
+.panel-list-container{
+
+}
+
+.p-listbox-item {
+    flex-grow:2;
+    list-style: none;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.p-listbox-list{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+.p-listbox {
+    height: 100%;
+    font-family: VarsityTeam;
+    font-size: 20px;
+}
+
+.p-listbox-list-wrapper{
+    height: 100%;
+
+}

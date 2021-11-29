@@ -5,7 +5,7 @@ Sistema de Gestión de Campeonatos de Futbol
 	La aplicación debe distinguir entre tres perfiles de usuario, los representantes de los clubes de la red, los jugadores de cada uno de esos clubes y a los administradores.
 	Cada uno de estos roles poseen distintos accesos que debemos gestionar. Dentro de las funciones de cada rol encontramos:
 
-MenuRepresentante de Club.
+Representante de Club.
 ⮚	Gestionar los datos del perfil.
 ⮚	Gestionar los datos del club.
 ⮚	Gestionar los datos de sus jugadores (ABM).
@@ -17,7 +17,7 @@ Jugadores.
 ⮚	Gestionar sus datos personales, como dirección, mail o teléfono.
 ⮚	Consultar el avance de su equipo y su perfil en los campeonatos en los que participa.
 
-MenuAdministrador.
+Administrador.
 ⮚	Creación de campeonatos.
 ⮚	Creación de los partidos.
 ⮚	Carga de los resultados de los partidos jugados (goles, faltas, incidentes).

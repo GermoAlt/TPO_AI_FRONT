@@ -1,8 +1,7 @@
 import React from "react";
-import MenuPanel from "../../../../components/MenuPanel/MenuPanel";
+import DisplayPanel from "../../../components/DisplayPanel/DisplayPanel";
 
-export default function MenuRepresentante(){
-
+export default function Representante(props){
     const menuItems = [
         {
             "title": "Mi perfil",
@@ -36,9 +35,7 @@ export default function MenuRepresentante(){
         }
     ]
 
-    return(
-        <div>
-            <MenuPanel data={menuItems} />
-        </div>
+    return (
+        <DisplayPanel componente={props.componente} opciones={menuItems}/>
     )
 }

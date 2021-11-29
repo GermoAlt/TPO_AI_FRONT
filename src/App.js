@@ -1,5 +1,7 @@
 import './App.css';
 import 'primereact/resources/themes/arya-green/theme.css'
+import 'primereact/resources/primereact.min.css'
+import 'primeicons/primeicons.css'
 import 'primeflex/primeflex.css';
 import './fonts/VarsityTeam/VarsityTeam.woff'
 import Main from "./containers/main/Main";

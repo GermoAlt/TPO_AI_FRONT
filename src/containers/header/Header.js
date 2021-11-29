@@ -6,6 +6,7 @@ import {Image, Transformation} from "cloudinary-react";
 import useUser from "../../contexts/hooks/useUser";
 import {useNavigate} from "react-router-dom";
 import CookieUtils from "../../utils/CookieUtils";
+import {PrimeIcons} from "primereact/api";
 
 export default function Header(){
     const {user, changeUser} = useUser()
@@ -45,7 +46,7 @@ export default function Header(){
     )
     const rightContents = (
         <React.Fragment>
-            <Button label="Cerrar sesión" onClick={() => logout()}/>
+            <Button icon={PrimeIcons.SIGN_OUT} label="Cerrar sesión" onClick={() => logout()}/>
         </React.Fragment>
     )
 

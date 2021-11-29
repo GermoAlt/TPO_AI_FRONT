@@ -27,7 +27,7 @@ export default function MenuPanel(props) {
 
     return(
         <div className={"menu-panel-container"}>
-            {generateMenuItems(props.data)}
+            {generateMenuItems(props.menuItems)}
         </div>
     )
 }

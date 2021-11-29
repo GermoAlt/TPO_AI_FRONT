@@ -8,7 +8,7 @@ export default function PerfilRepresentante(){
     const [ nombre, setNombre ] = useState()
 
     return(
-        <div className={"perfil-representante-container p-card"}>
+        <div className={"perfil-representante-container"}>
             <div className={"perfil-representante-panel-superior"}>
                 <Image publicId={"TorneosFutbol/representantes/representante.png"}>
                     <Transformation aspectRatio="1:1" gravity="face" radius="max" width="200" crop="fill" />
